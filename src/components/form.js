@@ -2,9 +2,10 @@ import React from 'react'
 
 const Form = ({ book, setBook }) => {
 
-    const handleChange = e => {
+    /* #region  Handles para eventos */
+    const handleChange = (e) => {
         setBook({
-            ...book,
+            ...book, // sirve para guardar cada propiedad que se vaya llenando
             [e.target.name]: e.target.value
         })
     }
@@ -37,6 +38,7 @@ const Form = ({ book, setBook }) => {
             edicion: 0
         })
     }
+    /* #endregion */
 
     return (
         <form onSubmit={handleSubmit}>

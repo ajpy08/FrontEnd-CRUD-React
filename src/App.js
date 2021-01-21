@@ -4,6 +4,7 @@ import BookList from './components/bookList'
 import Form from './components/form'
 
 function App() {
+  /* #region  Hook useState */
   const [book, setBook] = useState({
     titulo: '',
     autor: '',
@@ -12,7 +13,11 @@ function App() {
 
   const [books, setBooks] = useState([])
   const [listUpdated, setListUpdated] = useState(false)
+  /* #endregion */
 
+
+  /* #region  Hook useEffect */
+  // es como un constructor es lo que se ejecuta al inicio
   useEffect(() => {
     const getBooks = () => {
       fetch('http://localhost:9000/api')
@@ -23,6 +28,7 @@ function App() {
     getBooks()
     setListUpdated(false)
   }, [listUpdated])
+  /* #endregion */
 
   return (
     <Fragment>
